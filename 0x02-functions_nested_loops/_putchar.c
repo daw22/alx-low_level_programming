@@ -1,19 +1,10 @@
-#include <stdio.h>
+#include <unistd.h>
 /**
  * _putchar - _putchar function
  * Description: 'prints _putchar'
  *
  */
-void _putchar()
+void _putchar(char *c)
 {
-	char str[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
-	int str_length = sizeof(str) / sizeof(str[0]);
-	int i = 0;
-
-	while (str_length > i)
-	{
-		putchar(str[i]);
-		i++;
-	}
-	putchar(10);
+	write(1, c, 1);
 }
