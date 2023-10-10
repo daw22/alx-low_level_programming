@@ -8,12 +8,16 @@ void print_int(int n)
 {
 	int num = n, ld, md, fd, len = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+	}
 	while (num != 0)
 	{
 		len++;
 		num /= 10;
 	}
-	if ((len == 1) || (len == 0))
+	if (len == 1)
 	{
 		_putchar(' ');
 		_putchar(' ');
@@ -54,9 +58,6 @@ void print_times_table(int n)
 
 	if ((n > 15) || (n < 0))
 		return;
-	if (n == 0)
-		_putchar(0 + '0');
-
 	for (i = 0; i <= s; i++)
 	{
 		for (j = 0; j <= n; j++)
@@ -68,7 +69,7 @@ void print_times_table(int n)
 				if (j != 0)
 				{
 					print_int(mul);
-					if (j != n)
+					if ((j != n) && (mul != 0))
 						_putchar(',');
 				}
 				else
