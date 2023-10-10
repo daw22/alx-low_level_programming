@@ -1,9 +1,8 @@
-#ifndef _main_h
-#define _main_h
+#ifndef main_h
+#define main_h
 
 #include <unistd.h>
-#include <string.h>
 
 void _putchar(char);
-
+void print_alphabet(void);
 #endif
