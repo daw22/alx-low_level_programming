@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	char str[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
 	int len = sizeof(str) / sizeof(str[0]);
 	char nl = 10;
 	int i = 0;

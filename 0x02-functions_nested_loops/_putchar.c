@@ -5,7 +5,7 @@
  * Description: 'prints _putchar'
  *
  */
-void _putchar(char *c)
-{
+void _putchar(int *c)
+{ 
 	write(1, c, 1);
 }
