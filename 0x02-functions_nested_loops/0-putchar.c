@@ -8,16 +8,14 @@
  */
 int main(void)
 {
-	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
-	int len = sizeof(str) / sizeof(str[0]);
-	char nl = 10;
+	char str[] = "_putchar";
 	int i = 0;
 
-	while (i < len)
+	while (str[i] != '\0')
 	{
-		_putchar(&str[i]);
+		_putchar(str[i]);
 		i++;
 	}
-	_putchar(&nl);
+	_putchar('\n');
 	return (0);
 }

@@ -4,6 +4,6 @@
 #include <unistd.h>
 #include <string.h>
 
-#include "_putchar.h"
+void _putchar(char);
 
 #endif
