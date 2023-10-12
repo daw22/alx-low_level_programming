@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long n = 1231952;
+	long n = 612852475143;
 	long largest_prime_factor = -1;
 	int i = 2;
 
