@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - prints diagonal line witn \
- * @n: size of the line 
+ * print_diagonal - prints diagonal line with '\'
+ * @n: size of the line
  */
 void print_diagonal(int n)
 {
