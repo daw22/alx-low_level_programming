@@ -7,37 +7,20 @@ int tenpow(int to);
  */
 void print_number(int n)
 {
-	int i, len = 0, tmp = n, ld;
+
+	unsigned int m;
 
 	if (n < 0)
 	{
-		n *= -1;
+		m = -n;
 		_putchar('-');
 	}
-	ld = n % 10;
-	while (tmp != 0)
+	else
 	{
-		len++;
-		tmp /= 10;
+		m = n;
 	}
-	for (i = len - 1; i > 0; i--)
-	{
-		_putchar((n / tenpow(i)) + '0');
-		n -= tenpow(i) * (n / tenpow(i));
-	}
-	_putchar(ld + '0');
+
+	if (m / 10)
+		print_number(m / 10);
+	_putchar((m % 10) + '0');
 }
-
-int tenpow(int to)
-{
-	int i, res = 1;
-
-	for (i = 0; i < to; i++)
-	{
-		res *= 10;
-	}
-	return (res);
-}
-		
-
-
