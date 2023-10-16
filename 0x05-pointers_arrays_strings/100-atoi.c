@@ -16,9 +16,9 @@ int _atoi(char *str)
 	for (i = 0; i < len; i++)
 	{
 		if (!numdetected && str[i] == '-')
-			sign = -sign;
+			sign *= -1;
 		if (!numdetected && str[i] == '+')
-			sign = 1;
+			sign *= 1;
 		if (numdetected && i == len - 1)
 			numend = i;
 		if (numdetected && !(str[i] > 47 && str[i] < 58))
@@ -32,7 +32,7 @@ int _atoi(char *str)
 			numdetected = 1;
 		}
 	}
-	if(numdetected == 0)
+	if (numdetected == 0)
 		return (0);
 	for (i = numend; i >= numstart; i--)
 	{
@@ -43,7 +43,7 @@ int _atoi(char *str)
 }
 
 /**
- * pow - power by 10
+ * powten - power by 10
  * @n: ten raised to n
  *
  * Return: int
