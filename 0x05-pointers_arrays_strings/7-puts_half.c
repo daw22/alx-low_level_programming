@@ -7,7 +7,9 @@
  */
 void puts_half(char *str)
 {
-	unsigned long int i, mid = strlen(str) / 2;
+	unsigned long int i, mid = strlen(str) % 2 == 0 ? strlen(str) / 2 : (strlen(str) / 2) + 1;
+	if(!str)
+		return;
 
 	for (i = mid; i < strlen(str); i++)
 	{
