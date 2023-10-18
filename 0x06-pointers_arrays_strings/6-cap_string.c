@@ -12,16 +12,14 @@ int is_separater(char, char*, int);
 char *cap_string(char *str)
 {
 	int i, len = strlen(str);
-	char sp[] = {' ', '	', '\n', ',', '.', '?', ';', '(', ')', '{', 125, '"', 33};
+	char sp[] = {32, 9, 10, ',', '.', '?', ';', '(', ')', 123, 125, 34, 33};
 	int splen = sizeof(sp) / sizeof(char);
 
 	for (i = 0; i < len; i++)
 	{
 		if (str[i] == 9)
 			str[i] = 32;
-		if ((i == 0) && islowercc(str[i]))
-			str[i] -= 32;
-		else if (islowercc(str[i]) && is_separater(str[i - 1], sp, splen))
+		if (islowercc(str[i]) && is_separater(str[i - 1], sp, splen))
 			str[i] -= 32;
 	}
 	return (str);
