@@ -8,7 +8,7 @@ int powten(int n);
 void print_number(int n)
 {
 	int i, tmp = n, len = 1;
-	
+
 	if (n < 0)
 	{
 		_putchar('-');
