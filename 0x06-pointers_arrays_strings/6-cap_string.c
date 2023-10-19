@@ -17,10 +17,8 @@ char *cap_string(char *str)
 
 	for (i = 0; i < len; i++)
 	{
-		if (str[i] == 9)
-			str[i] = 32;
 		if (i == 0 && islowercc(str[i]))
-			str[i] -=32;
+			str[i] -= 32;
 		else if (islowercc(str[i]) && is_separater(str[i - 1], sp, splen))
 			str[i] -= 32;
 	}
