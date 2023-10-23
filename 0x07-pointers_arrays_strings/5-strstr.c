@@ -8,25 +8,19 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i;
-	unsigned int hlen = strlen(haystack), nlen = strlen(needle);
-
-	for (i = 0; i < hlen; i++)
+	while (*haystack != 0)
 	{
-		if (needle[0] == haystack[i])
+		char *hs = haystack;
+		char *nd = needle;
+		
+		while (*hs == *nd && *nd != '\0')
 		{
-			char potm[100];
-
-			if (hlen - i >= nlen)
-			{
-				strncpy(potm, haystack + i, nlen);
-				potm[nlen] = '\0';
-			}
-			else
-				break;
-			if (strcmp(needle, potm) == 0)
-				return (haystack + i);
+			hs++;
+			nd++;
 		}
+		if (*nd == '\0')
+			return (haystack);
+		haystack++;
 	}
 	return (0);
 }
