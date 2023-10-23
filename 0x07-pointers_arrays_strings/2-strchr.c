@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strchr - searchs string for a character
@@ -8,9 +9,9 @@
  */
 char *_strchr(char *s, char c)
 {
-	int i = 0;
+	unsigned int i = 0;
 
-	while (s[i] != '\0')
+	for (i = 0; i < strlen(s); i++)
 	{
 		if (s[i] == c)
 			return (&s[i]);
