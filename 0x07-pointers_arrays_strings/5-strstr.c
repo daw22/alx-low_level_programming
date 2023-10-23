@@ -18,7 +18,10 @@ char *_strstr(char *haystack, char *needle)
 			char potm[100];
 
 			if (hlen - i >= nlen)
+			{
 				strncpy(potm, haystack + i, nlen);
+				potm[nlen] = '\0';
+			}
 			else
 				break;
 			if (strcmp(needle, potm) == 0)
