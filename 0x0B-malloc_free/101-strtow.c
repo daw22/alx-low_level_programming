@@ -13,9 +13,11 @@ char **strtow(char *str)
 	int i, j, w, words = 0;
 	char **p;
 
-	if (str == NULL || strcmp(str, "") == 0 || strcmp(str, " ") == 0)
+	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
 	words = word_count(str);
+	if (words == 0)
+		return (NULL);
 	p = malloc(words * sizeof(char *));
 	i = 0;
 	w = 0;
@@ -30,7 +32,7 @@ char **strtow(char *str)
 				c++;
 				i++;
 			}
-			p[w] = malloc(c + 1);
+			p[w] = malloc(c);
 			for (j = 0; j < c; j++)
 				p[w][j] = str[i - c + j];
 			p[w][c] = '\0';
