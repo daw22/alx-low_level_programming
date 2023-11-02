@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * malloc_checked: allocates memory for a given size
+ * malloc_checked - allocates memory for a given size
  * @b: input size in bytes
  * Return: pointer to the new memory block
  */
