@@ -4,7 +4,7 @@
  * get_op_func - returns a pointer to a function for the appropriate operator
  * @s: string representation of the operator("+", "-", ..)
  *
- * Retutn: pointerto a func
+ * Return: pointerto a func
  */
 int (*get_op_func(char *s))(int, int)
 {
