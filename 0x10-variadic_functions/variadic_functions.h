@@ -2,8 +2,10 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
+#include <stdlib.h>
 
 void _putchar(char);
 int sum_them_all(const unsigned int, ...);
+void print_numbers(const char*, const unsigned int, ...);
 
 #endif
