@@ -10,8 +10,11 @@ unsigned int pow2(unsigned int);
 unsigned int binary_to_uint(const char *c)
 {
 	unsigned int dec = 0;
-	int len = strlen(c) - 1;
+	int len;
 
+	for (len = 0; c[len] != '\0'; len++)
+		;
+	len--;
 	if (c == NULL)
 		return (0);
 	while (len >= 0)
