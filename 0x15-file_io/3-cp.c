@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read form", argv[1]);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read form file", argv[1]);
 		return (98);
 	}
 }
@@ -63,7 +63,7 @@ int close_files(FILE *file1, FILE *file2)
 
 	if (cs1 != 0 || cs2 != 0)
 	{
-		dprintf(STDERR_FILENO, "%s", "Error: Can't close");
+		dprintf(STDERR_FILENO, "%s", "Error: Can't close fd");
 		dprintf(STDERR_FILENO, "%d\n", cs1 != 0 ? fileno(file1) : fileno(file2));
 		return (100);
 	}
