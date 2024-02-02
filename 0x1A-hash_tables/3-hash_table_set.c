@@ -31,11 +31,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			node = node->next;
 		}
 		new = create_node(key, value);
+		if (new == NULL)
+			return (0);
 		new->next = ht->array[index];
 		ht->array[index] = new;
 		return (1);
 	}
 	new = create_node(key, value);
+	if (new == NULL)
+		return (0);
 	ht->array[index] = new;
 	return (1);
 }
@@ -51,10 +55,11 @@ hash_node_t *create_node(const char *key, const char *value)
 {
 	hash_node_t *new;
 
-	new = malloc(sizeof(*new));
+	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 		return (NULL);
 	new->key = strdup(key);
 	new->value = strdup(value);
+	new->next = NULL;
 	return (new);
 }
