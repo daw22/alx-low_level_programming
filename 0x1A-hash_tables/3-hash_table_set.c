@@ -9,30 +9,28 @@
  * Return: Upon failure - 0.
  *         Otherwise - 1.
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new;
+	hash_node_t *new, *node;
 	char *cp_value;
-	unsigned long int i, index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
-
 	cp_value = strdup(value);
 	if (cp_value == NULL)
 		return (0);
-
-	for (i = index; ht->array[i]; i++)
+	node = ht->array[index];
+	while (node)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(node->key, key) == 0)
 		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = cp_value;
+			free(node->value);
+			node->value = cp_value;
 			return (1);
 		}
+		node = node->next;
 	}
-
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 	{
@@ -42,12 +40,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strdup(key);
 	if (new->key == NULL)
 	{
+		free(cp_value);
 		free(new);
 		return (0);
 	}
 	new->value = cp_value;
 	new->next = ht->array[index];
 	ht->array[index] = new;
-
 	return (1);
 }
