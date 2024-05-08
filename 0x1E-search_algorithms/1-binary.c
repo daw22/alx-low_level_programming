@@ -4,7 +4,7 @@ void printArray(int, int, int *);
 
 /**
  * binary_search - binary search algorithm (iterative)
- * @arry: array to searched
+ * @array: array to searched
  * @size: size of arrya to be searched
  * @value: search element to look for
  * Return: index of value if found, -1 if not
